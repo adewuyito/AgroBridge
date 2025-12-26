@@ -100,4 +100,5 @@ class AppFonts {
   static TextStyle get inter => GoogleFonts.inter();
   static TextStyle get roboto => GoogleFonts.roboto();
   static TextStyle get poppins => GoogleFonts.poppins();
+  static TextStyle get openSans => GoogleFonts.openSans();
 }
