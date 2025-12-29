@@ -49,6 +49,7 @@ extension GoogleFontsStyleExtension on TextStyle {
   TextStyle get regular15 => regular.size15;
   TextStyle get regular16 => regular.size16;
   TextStyle get regular18 => regular.size18;
+  TextStyle get regular20 => regular.size20;
 
   TextStyle get medium10 => medium.size10;
   TextStyle get medium12 => medium.size12;

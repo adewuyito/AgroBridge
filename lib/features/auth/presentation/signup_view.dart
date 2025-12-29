@@ -1,8 +1,12 @@
 import 'package:agrobridge_mobile/core/constants/spacing.dart';
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
+import 'package:agrobridge_mobile/features/auth/presentation/widgets/auth_form_textfield.dart';
+import 'package:agrobridge_mobile/gen/assets.gen.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'provider/is_loading_provider.dart';
@@ -42,48 +46,45 @@ class SignupView extends HookConsumerWidget {
             Form(
               key: _formkey,
               child: Column(
+                spacing: 32,
                 children: [
-                  TextFormField(
+                  AuthFormTextfield(
                     controller: _companyName,
-                    decoration: InputDecoration(
-                      label: Text(
-                        'Comapany Name',
-                        style: AppFonts.inter.medium14,
-                      ),
-                    ),
+                    label: 'Comapany Name',
+                    hint: "Olak Global Inc.",
                   ),
-                  TextFormField(
+
+                  AuthFormTextfield(
                     controller: _contactPerson,
-                    decoration: InputDecoration(
-                      label: Text(
-                        'Contact Person',
-                        style: AppFonts.inter.medium14,
-                      ),
-                    ),
+                    label: 'Contact Person',
+                    hint: "John Doe",
                   ),
-                  TextFormField(
+
+                  AuthFormTextfield(
                     controller: _email,
-                    decoration: InputDecoration(
-                      label: Text('Email', style: AppFonts.inter.medium14),
-                      suffixIcon: Icon(Icons.mail),
-                    ),
+                    label: "Email",
+                    hint: "Enter your email",
+                    icon: Assets.icons.mail.svg(),
                   ),
-                  TextFormField(
+
+                  AuthFormTextfield(
                     controller: _password,
-                    decoration: InputDecoration(
-                      label: Text('Password', style: AppFonts.inter.medium14),
-                      suffixIcon: Icon(Icons.remove),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: _isloading ? null : _handleSignUp,
-                    child: _isloading
-                        ? CircularProgressIndicator()
-                        : Text('Sign In'),
+                    label: "Password",
+                    hint: "********",
+                    icon: Assets.icons.passwordHide.svg(),
                   ),
                 ],
               ),
             ),
+
+            const SizedBox(height: 72),
+
+            ElevatedButton(
+              onPressed: _isloading ? null : _handleSignUp,
+              child: _isloading ? CircularProgressIndicator() : Text('Sign In'),
+            ),
+
+            SizedBox(height: 24.h),
 
             // ~ Signup redirect
             Text.rich(
@@ -91,10 +92,12 @@ class SignupView extends HookConsumerWidget {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: "You don't have an account?",
+                    text: "You don't have an account? ",
                     style: AppFonts.openSans.regular14,
                   ),
                   TextSpan(
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {}, // TODO: Assign controls
                     text: "Sign Up",
                     style: AppFonts.openSans.semiBold14,
                   ),
