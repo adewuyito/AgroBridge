@@ -35,7 +35,11 @@ class AppRouter extends RootStackRouter {
   final AuthGuard _authGuard;
 
   @override
-  List<AutoRoute> get routes => [];
+  List<AutoRoute> get routes => [
+    // AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: SignupRoute.page, initial: true),
+  ];
   @override
   List<AutoRouteGuard> get guards => [_authGuard];
 

@@ -1,3 +1,4 @@
+import 'package:agrobridge_mobile/core/constants/app_theme.dart';
 import 'package:agrobridge_mobile/routes/app_navigator.dart';
 import 'package:agrobridge_mobile/routes/app_route.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,9 @@ class AgroBridgeApp extends ConsumerWidget {
       designSize: const Size(390, 844),
 
       child: MaterialApp.router(
+        theme: appTheme,
+        debugShowCheckedModeBanner: false,
+
         routerConfig: appRouter.config(
           navigatorObservers: () => [AppNavigatorObserver()],
         ),

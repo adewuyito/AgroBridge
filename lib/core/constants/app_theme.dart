@@ -6,12 +6,14 @@ final baseTheme = ThemeData.light();
 
 // base border
 final inputBorderBase = OutlineInputBorder(
-  borderRadius: BorderRadius.circular(10),
+  borderRadius: BorderRadius.circular(24),
+  borderSide: BorderSide(color: Color.fromRGBO(30, 89, 37, 1)),
+
   // borderSide: BorderSide(color: ColorName.borderGrey),
 );
 
-final ThemeData headspaceTheme = baseTheme.copyWith(
-  scaffoldBackgroundColor: Colors.white,
+final ThemeData appTheme = baseTheme.copyWith(
+  scaffoldBackgroundColor: Color.fromRGBO(254, 254, 254, 1),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     unselectedIconTheme: IconThemeData(color: Color.fromARGB(1, 0, 33, 22)),
     selectedIconTheme: IconThemeData(color: Color.fromARGB(1, 0, 33, 22)),
@@ -42,10 +44,10 @@ final ThemeData headspaceTheme = baseTheme.copyWith(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Color(0xFF104423),
-      // foregroundColor: ColorName.textPositive,
-      textStyle: AppFonts.inter.medium14,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      backgroundColor: Color.fromRGBO(30, 89, 37, 1),
+      foregroundColor: Colors.white,
+      textStyle: AppFonts.inter.medium14.withColor(Colors.white),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       minimumSize: const Size(double.infinity, 55),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
     ),
@@ -64,6 +66,9 @@ final ThemeData headspaceTheme = baseTheme.copyWith(
     // unselectedLabelColor: appColors.black,
   ),
   inputDecorationTheme: baseTheme.inputDecorationTheme.copyWith(
+    // obscuringCharacter: '*',
+    suffixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
+    contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 24),
     floatingLabelBehavior: FloatingLabelBehavior.auto,
     border: inputBorderBase,
     enabledBorder: inputBorderBase,
