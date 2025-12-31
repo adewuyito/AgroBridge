@@ -1,7 +1,10 @@
 import 'package:agrobridge_mobile/core/constants/spacing.dart';
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
+import 'package:agrobridge_mobile/core/utils/input_validator.dart';
 import 'package:agrobridge_mobile/features/auth/presentation/widgets/auth_form_textfield.dart';
 import 'package:agrobridge_mobile/gen/assets.gen.dart';
+import 'package:agrobridge_mobile/routes/app_navigator.dart';
+import 'package:agrobridge_mobile/routes/app_route.gr.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +28,9 @@ class LoginView extends HookConsumerWidget {
     //~ Form key
     final _formkey = GlobalKey<FormState>();
 
-    void _handleLogin() async {}
+    void _handleLogin() async {
+      if (!_formkey.currentState!.validate()) return;
+    }
 
     return Scaffold(
       body: SafeArea(
@@ -107,6 +112,7 @@ class LoginView extends HookConsumerWidget {
                     label: "Email",
                     hint: "Enter your email",
                     icon: Assets.icons.mail.svg(),
+                    validation: InputValidatorUtils.validEmailAddress,
                   ),
 
                   SizedBox(height: 31.h),
@@ -116,6 +122,8 @@ class LoginView extends HookConsumerWidget {
                     label: "Password",
                     hint: "********",
                     icon: Assets.icons.passwordHide.svg(),
+                    validation: (value) =>
+                        InputValidatorUtils.nonEmptyField('Password', value),
                   ),
 
                   SizedBox(height: 71.h),
@@ -143,7 +151,8 @@ class LoginView extends HookConsumerWidget {
                   ),
                   TextSpan(
                     recognizer: TapGestureRecognizer()
-                      ..onTap = () {}, // TODO: Assign controls
+                      ..onTap = () =>
+                          AppNavigator.of(context).push(SignupRoute()),
                     text: "Sign Up",
                     style: AppFonts.openSans.semiBold14,
                   ),
