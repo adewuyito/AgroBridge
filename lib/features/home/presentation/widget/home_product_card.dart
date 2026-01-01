@@ -12,7 +12,6 @@ class HomeProductCard extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       width: 184.w,
-      // height: 261.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Color(0xFFE5E7EB)),
@@ -30,13 +29,22 @@ class HomeProductCard extends ConsumerWidget {
                 decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color.fromRGBO(0, 0, 0, 0.251),
+                      offset: const Offset(0, 15),
+                      blurRadius: 53.0,
+                      spreadRadius: -19.0,
+                    ),
+                  ],
                 ),
               ),
 
               SizedBox(height: 18.h),
-
               // ~ Product name
               Text('Product Name', style: AppFonts.openSans.regular14),
+
+              SizedBox(height: 8.h),
               // ~ Product location
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -52,6 +60,7 @@ class HomeProductCard extends ConsumerWidget {
                 ],
               ),
 
+              SizedBox(height: 10.h),
               // ~ Product Price
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,13 +72,28 @@ class HomeProductCard extends ConsumerWidget {
                       Color.fromRGBO(17, 24, 39, 1),
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {}, // TODO: Add logic
-                    icon: Assets.icons.homeCart.svg(),
+                  GestureDetector(
+                    onTap: () {}, // TODO: Add logic
+                    child: Assets.icons.homeCart.svg(),
                   ),
                 ],
               ),
             ],
+          ),
+
+          // ~ InStock label
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(233, 249, 239, 1),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(10)),
+            ),
+            child: Text(
+              'In Stock',
+              style: AppFonts.openSans.withColor(
+                Color.fromRGBO(34, 197, 94, 1),
+              ),
+            ),
           ),
         ],
       ),

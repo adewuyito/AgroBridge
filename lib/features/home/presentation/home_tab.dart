@@ -3,6 +3,7 @@ import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_appbar.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_carousel.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_filters.dart';
+import 'package:agrobridge_mobile/features/home/presentation/widget/home_product_card.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_searchbar.dart';
 import 'package:agrobridge_mobile/gen/assets.gen.dart';
 import 'package:auto_route/annotations.dart';
@@ -38,33 +39,36 @@ class HomeTab extends HookConsumerWidget {
 
             const SizedBox(height: 24),
 
+            //  ~ Popular product section
             Padding(
               padding: AppPadding.scaffoldSafeArea,
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Popular Product',
-                        style: AppFonts.openSans.regular14,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'See all',
-                          style: AppFonts.openSans.regular12,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SingleChildScrollView(
-                    child: Row(
-                      children: [
-                    ],
-                    ),
+                  Text('Popular Product', style: AppFonts.openSans.regular14),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('See all', style: AppFonts.openSans.regular12),
                   ),
                 ],
+              ),
+            ),
+            // ~
+            const SizedBox(height: 12),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: AppPadding.scaffoldSafeArea,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  spacing: 24,
+                  children: [
+                    // TODO: Generate the list
+                    HomeProductCard(),
+                    HomeProductCard(),
+                    HomeProductCard(),
+                  ],
+                ),
               ),
             ),
           ],

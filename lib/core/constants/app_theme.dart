@@ -13,7 +13,7 @@ final inputBorderBase = OutlineInputBorder(
 );
 
 final ThemeData appTheme = baseTheme.copyWith(
-  scaffoldBackgroundColor: Color.fromRGBO(254, 254, 254, 1),
+  scaffoldBackgroundColor: Color.fromRGBO(251, 251, 251, 1),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     unselectedIconTheme: IconThemeData(color: Color.fromARGB(1, 0, 33, 22)),
     selectedIconTheme: IconThemeData(color: Color.fromARGB(1, 0, 33, 22)),
