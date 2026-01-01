@@ -23,6 +23,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/google_g_2.svg
   SvgGenImage get googleG2 => const SvgGenImage('assets/icons/google_g_2.svg');
 
+  /// File path: assets/icons/home_cart.svg
+  SvgGenImage get homeCart => const SvgGenImage('assets/icons/home_cart.svg');
+
   /// File path: assets/icons/input_field_prefix.svg
   SvgGenImage get inputFieldPrefix =>
       const SvgGenImage('assets/icons/input_field_prefix.svg');
@@ -53,6 +56,7 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [
     googleG,
     googleG2,
+    homeCart,
     inputFieldPrefix,
     inputFieldSuffix,
     mail,

@@ -10,9 +10,18 @@ class HomeCategoryFilters extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
+      physics: AlwaysScrollableScrollPhysics(),
       child: Row(
         spacing: 8,
-        children: [_filterButton(false, filterkey: FilterCategory.cashCrop)],
+        children: [
+          const SizedBox(width: 10),
+          _filterButton(true, filterkey: FilterCategory.cashCrop),
+          _filterButton(false, filterkey: FilterCategory.cashCrop),
+          _filterButton(false, filterkey: FilterCategory.cashCrop),
+          _filterButton(false, filterkey: FilterCategory.cashCrop),
+          _filterButton(false, filterkey: FilterCategory.cashCrop),
+          const SizedBox(width: 10),
+        ],
       ),
     );
   }
@@ -24,7 +33,7 @@ class HomeCategoryFilters extends ConsumerWidget {
     return GestureDetector(
       onTap: () {}, // ! Use the filter category to find the taped button
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
           color: isActive ? Color(0xFF1E5925) : Colors.white,
           borderRadius: BorderRadius.circular(4),
@@ -32,7 +41,61 @@ class HomeCategoryFilters extends ConsumerWidget {
             color: !isActive ? Color(0xFFF5F5F7) : Colors.transparent,
           ),
         ),
-        child: Text(filterkey.label, style: AppFonts.openSans),
+        child: Text(
+          filterkey.label,
+          style: AppFonts.openSans.withColor(
+            isActive ? Colors.white : Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ChoiceChipExample extends StatefulWidget {
+  const ChoiceChipExample({super.key});
+
+  @override
+  State<ChoiceChipExample> createState() => _ChoiceChipExampleState();
+}
+
+class _ChoiceChipExampleState extends State<ChoiceChipExample> {
+  int? _value = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 18.0),
+        child: Row(
+          children: List<Widget>.generate(8, (int index) {
+            return Padding(
+              padding: EdgeInsets.only(right: index < 7 ? 10.0 : 0),
+              child: ChoiceChip(
+                label: Text(
+                  'Option $index',
+                  style: AppFonts.openSans.withColor(
+                    _value == index ? Colors.white : Colors.black,
+                  ),
+                ),
+                selected: _value == index,
+                onSelected: (bool selected) {
+                  setState(() {
+                    _value = selected ? index : null;
+                  });
+                },
+                selectedColor: Color(0xFF1E5925),
+                backgroundColor: Colors.white,
+                side: BorderSide(color: Color(0xFFF5F5F7), width: 1.0),
+                showCheckmark: false,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }
