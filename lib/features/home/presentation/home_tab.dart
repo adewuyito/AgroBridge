@@ -3,6 +3,7 @@ import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_appbar.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_carousel.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_filters.dart';
+import 'package:agrobridge_mobile/features/home/presentation/widget/home_popular_product_section.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_product_card.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_searchbar.dart';
 import 'package:agrobridge_mobile/gen/assets.gen.dart';
@@ -55,21 +56,33 @@ class HomeTab extends HookConsumerWidget {
             ),
             // ~
             const SizedBox(height: 12),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+            HomePopularProductSection(),
+
+            // ~ All product section
+            const SizedBox(height: 25),
+            Align(
+              alignment: AlignmentGeometry.topLeft,
               child: Padding(
                 padding: AppPadding.scaffoldSafeArea,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  spacing: 24,
-                  children: [
-                    // TODO: Generate the list
-                    HomeProductCard(),
-                    HomeProductCard(),
-                    HomeProductCard(),
-                  ],
-                ),
+                child: Text('All product', style: AppFonts.openSans.regular16),
               ),
+            ),
+            const SizedBox(height: 12),
+            GridView.builder(
+              padding: AppPadding.scaffoldSafeArea,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.vertical,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+                childAspectRatio: .68,
+              ),
+              itemBuilder: (context, index) {
+                return HomeProductCard();
+              },
+              itemCount: 6,
             ),
           ],
         ),
