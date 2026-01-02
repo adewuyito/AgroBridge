@@ -6,11 +6,9 @@ import 'package:agrobridge_mobile/features/home/presentation/widget/home_filters
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_popular_product_section.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_product_card.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_searchbar.dart';
-import 'package:agrobridge_mobile/gen/assets.gen.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @routePage
