@@ -8,47 +8,52 @@ class HomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Row(
-      children: [
-        // ~ Profile Image
-        CircleAvatar(),
+    final double topPadding = MediaQuery.paddingOf(context).top;
+    return Padding(
+      padding: EdgeInsets.only(top: topPadding, left: 18, right: 18),
+      child: Row(
+        spacing: 10,
+        children: [
+          // ~ Profile Image
+          CircleAvatar(),
 
-        // ~ Location
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              "Hello `Name`",
-              style: AppFonts.openSans.semiBold16.withColor(
-                Color.fromRGBO(65, 70, 82, 1),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Assets.icons.mapPin.svg(),
-                Text(
-                  "Kaduna, Nigeria.",
-                  style: AppFonts.openSans.withColor(
-                    Color.fromRGBO(65, 70, 82, 1),
-                  ),
+          // ~ Location
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Hello `Name`",
+                style: AppFonts.openSans.semiBold16.withColor(
+                  Color.fromRGBO(65, 70, 82, 1),
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Assets.icons.mapPin.svg(),
+                  Text(
+                    "Kaduna, Nigeria.",
+                    style: AppFonts.openSans.withColor(
+                      Color.fromRGBO(65, 70, 82, 1),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
 
-        Spacer(),
+          Spacer(),
 
-        // ~ User notification
-        GestureDetector(
-          onTap: () {},
-          child: Assets.icons.notificationBell.svg(),
-        ),
-      ],
+          // ~ User notification
+          GestureDetector(
+            onTap: () {},
+            child: Assets.icons.notificationBell.svg(),
+          ),
+        ],
+      ),
     );
   }
 

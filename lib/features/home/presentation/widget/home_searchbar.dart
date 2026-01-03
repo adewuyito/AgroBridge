@@ -27,7 +27,13 @@ class HomeSearchbar extends ConsumerWidget {
                 elevation: 1,
                 context: context,
                 builder: (context) {
-                  return HomeSearchFilterBottomSheet();
+                  return DraggableScrollableSheet(
+                    initialChildSize: 0.8,
+                    minChildSize: 0.2,
+                    maxChildSize: 0.9,
+                    expand: false,
+                    builder: (context, index) => HomeSearchFilterBottomSheet(),
+                  );
                 },
               );
             },

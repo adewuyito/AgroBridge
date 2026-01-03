@@ -12,9 +12,19 @@ class HomeProductCard extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       width: 184.w,
+      height: 261.h,
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Color(0xFFE5E7EB)),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromRGBO(0, 0, 0, 0.251),
+            offset: const Offset(0, 15),
+            blurRadius: 53.0,
+            spreadRadius: -19.0,
+          ),
+        ],
       ),
       child: Stack(
         children: [
@@ -29,23 +39,20 @@ class HomeProductCard extends ConsumerWidget {
                 decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color.fromRGBO(0, 0, 0, 0.251),
-                      offset: const Offset(0, 15),
-                      blurRadius: 53.0,
-                      spreadRadius: -19.0,
-                    ),
-                  ],
                 ),
               ),
 
               SizedBox(height: 18.h),
               // ~ Product name
-              Text('Product Name', style: AppFonts.openSans.regular14),
+              Text(
+                'Product Name',
+                style: AppFonts.openSans.regular14,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
 
-              SizedBox(height: 8.h),
-              // ~ Product location
+              // SizedBox(height: 8.h),
+              // ~ Product location.
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -60,7 +67,7 @@ class HomeProductCard extends ConsumerWidget {
                 ],
               ),
 
-              SizedBox(height: 10.h),
+              SizedBox(height: 11.h),
               // ~ Product Price
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,9 +97,9 @@ class HomeProductCard extends ConsumerWidget {
             ),
             child: Text(
               'In Stock',
-              style: AppFonts.openSans.withColor(
-                Color.fromRGBO(34, 197, 94, 1),
-              ),
+              style: AppFonts.openSans
+                  .withColor(Color.fromRGBO(34, 197, 94, 1))
+                  .withHeight(1),
             ),
           ),
         ],

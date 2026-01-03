@@ -15,76 +15,73 @@ class HomeSearchFilterBottomSheet extends ConsumerWidget {
     return Scaffold(
       body: Padding(
         padding: AppPadding.scaffoldSafeArea,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(0, 12, 0, 4),
-                width: 70,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(229, 231, 235, 1),
-                  borderRadius: BorderRadius.circular(12),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  margin: const EdgeInsets.fromLTRB(0, 12, 0, 4),
+                  width: 70,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(229, 231, 235, 1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
               ),
-            ),
-            // ~
-            const SizedBox(height: 4),
+              // ~
+              const SizedBox(height: 4),
 
-            Text('Category', style: cStyle),
-            Divider(color: Color.fromRGBO(229, 231, 235, 1)),
-            Row(
-              children: [
-                // Text('Grains'),
-              ],
-            ),
-            ...product.map((p) {
-              return CheckboxListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-                title: Text(
-                  p.name,
-                  style: AppFonts.openSans.regular18.withColor(
-                    Color(0xFF414652),
+              Text('Category', style: cStyle),
+              Divider(color: Color.fromRGBO(229, 231, 235, 1)),
+              ...product.map((p) {
+                return CheckboxListTile(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+                  title: Text(
+                    p.name,
+                    style: AppFonts.openSans.regular18.withColor(
+                      Color(0xFF414652),
+                    ),
                   ),
-                ),
-                value: false,
-                onChanged: (onChanged) {},
-              );
-            }),
+                  value: false,
+                  onChanged: (onChanged) {},
+                );
+              }),
 
-            // ~
-            const SizedBox(height: 4),
+              // ~
+              const SizedBox(height: 4),
 
-            Text('Category', style: cStyle),
-            Divider(color: Color.fromRGBO(229, 231, 235, 1)),
-            ...product.map((p) {
-              return CheckboxListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-                title: Text(
-                  p.name,
-                  style: AppFonts.openSans.regular18.withColor(
-                    Color(0xFF414652),
+              Text('Category', style: cStyle),
+              Divider(color: Color.fromRGBO(229, 231, 235, 1)),
+              ...product.map((p) {
+                return CheckboxListTile(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+                  title: Text(
+                    p.name,
+                    style: AppFonts.openSans.regular18.withColor(
+                      Color(0xFF414652),
+                    ),
                   ),
-                ),
-                value: false,
-                onChanged: (onChanged) {},
-              );
-            }),
+                  value: false,
+                  onChanged: (onChanged) {},
+                );
+              }),
 
-            // ~
-            const SizedBox(height: 4),
+              // ~
+              const SizedBox(height: 4),
 
-            Text('Growth Score range', style: cStyle),
-            Divider(color: Color.fromRGBO(229, 231, 235, 1)),
-            Slider(value: 0, onChanged: (value) {}),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text('\$100'), Text('\$10,000')],
-            ),
-          ],
+              Text('Growth Score range', style: cStyle),
+              Divider(color: Color.fromRGBO(229, 231, 235, 1)),
+              Slider(value: 0, onChanged: (value) {}),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text('\$100'), Text('\$10,000')],
+              ),
+            ],
+          ),
         ),
       ),
     );

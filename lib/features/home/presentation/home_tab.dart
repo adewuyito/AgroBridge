@@ -9,6 +9,7 @@ import 'package:agrobridge_mobile/features/home/presentation/widget/home_searchb
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @routePage
@@ -75,7 +76,7 @@ class HomeTab extends HookConsumerWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
-                childAspectRatio: .68,
+                childAspectRatio: 181.w / 285.h,
               ),
               itemBuilder: (context, index) {
                 return HomeProductCard();
