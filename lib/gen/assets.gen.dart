@@ -17,6 +17,17 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow_left_green.svg
+  SvgGenImage get arrowLeftGreen =>
+      const SvgGenImage('assets/icons/arrow_left_green.svg');
+
+  /// File path: assets/icons/dollar_sign.svg
+  SvgGenImage get dollarSign =>
+      const SvgGenImage('assets/icons/dollar_sign.svg');
+
+  /// File path: assets/icons/file_pdf.svg
+  SvgGenImage get filePdf => const SvgGenImage('assets/icons/file_pdf.svg');
+
   /// File path: assets/icons/google_g.svg
   SvgGenImage get googleG => const SvgGenImage('assets/icons/google_g.svg');
 
@@ -54,6 +65,9 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+    arrowLeftGreen,
+    dollarSign,
+    filePdf,
     googleG,
     googleG2,
     homeCart,

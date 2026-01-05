@@ -14,15 +14,15 @@ class AgroBridgeApp extends ConsumerWidget {
     return ScreenUtilInit(
       // ~ Set screen size
       designSize: const Size(390, 844),
-
-      child: MaterialApp.router(
-        theme: appTheme,
-        debugShowCheckedModeBanner: false,
-
-        routerConfig: appRouter.config(
-          navigatorObservers: () => [AppNavigatorObserver()],
-        ),
-      ),
+      builder: (context, child) {
+        return MaterialApp.router(
+          theme: appTheme,
+          debugShowCheckedModeBanner: false,
+          routerConfig: appRouter.config(
+            navigatorObservers: () => [AppNavigatorObserver()],
+          ),
+        );
+      },
     );
   }
 }

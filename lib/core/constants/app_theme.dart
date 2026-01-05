@@ -25,8 +25,9 @@ final ThemeData appTheme = baseTheme.copyWith(
   ),
   // primaryColor: appColors.blue,
   appBarTheme: AppBarTheme(
-    // backgroundColor: appColors.white,
+    backgroundColor: Color.fromRGBO(251, 251, 251, 1),
     elevation: 0,
+    scrolledUnderElevation: 0.0,
     // foregroundColor: appColors.black,
   ),
   colorScheme: baseTheme.colorScheme.copyWith(
@@ -48,8 +49,15 @@ final ThemeData appTheme = baseTheme.copyWith(
       foregroundColor: Colors.white,
       textStyle: AppFonts.inter.medium14.withColor(Colors.white),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-      minimumSize: const Size(double.infinity, 55),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      // minimumSize: const Size(double.infinity, 55),
+      padding: const EdgeInsets.symmetric(horizontal: 31, vertical: 17),
+    ),
+  ),
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+      foregroundColor: Color.fromRGBO(30, 89, 37, 1),
+      side: BorderSide(color: Color.fromRGBO(30, 89, 37, 1)),
+      padding: const EdgeInsets.symmetric(horizontal: 31, vertical: 17),
     ),
   ),
   tabBarTheme: baseTheme.tabBarTheme.copyWith(
