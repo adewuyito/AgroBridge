@@ -1,7 +1,7 @@
 import 'package:agrobridge_mobile/core/constants/spacing.dart';
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/product_detail_related_products.dart';
-import 'package:agrobridge_mobile/features/home/presentation/widget/product_details.dart';
+import 'package:agrobridge_mobile/features/home/presentation/widget/product_details_widget.dart';
 import 'package:agrobridge_mobile/features/home/presentation/widget/product_navigation_legend.dart';
 import 'package:agrobridge_mobile/gen/assets.gen.dart';
 import 'package:auto_route/auto_route.dart';

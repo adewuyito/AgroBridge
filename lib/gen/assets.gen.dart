@@ -63,6 +63,10 @@ class $AssetsIconsGen {
   SvgGenImage get passwordReveal =>
       const SvgGenImage('assets/icons/password_reveal.svg');
 
+  /// File path: assets/icons/success_icon.svg
+  SvgGenImage get successIcon =>
+      const SvgGenImage('assets/icons/success_icon.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
     arrowLeftGreen,
@@ -78,6 +82,7 @@ class $AssetsIconsGen {
     notificationBell,
     passwordHide,
     passwordReveal,
+    successIcon,
   ];
 }
 

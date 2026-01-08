@@ -60,6 +60,7 @@ extension GoogleFontsStyleExtension on TextStyle {
   TextStyle get medium16 => medium.size16;
   TextStyle get medium18 => medium.size18;
   TextStyle get medium20 => medium.size20;
+  TextStyle get medium24 => medium.size24;
 
   TextStyle get semiBold12 => semiBold.size12;
   TextStyle get semiBold14 => semiBold.size14;
