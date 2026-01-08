@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 /// Extension on TextStyle to provide convenient font weight and size combinations
@@ -16,21 +17,22 @@ extension GoogleFontsStyleExtension on TextStyle {
 
   // Size variations - common sizes
 
-  TextStyle get size10 => copyWith(fontSize: 10);
-  TextStyle get size11 => copyWith(fontSize: 11);
-  TextStyle get size12 => copyWith(fontSize: 12);
-  TextStyle get size13 => copyWith(fontSize: 13);
-  TextStyle get size14 => copyWith(fontSize: 14);
-  TextStyle get size15 => copyWith(fontSize: 15);
-  TextStyle get size16 => copyWith(fontSize: 16);
-  TextStyle get size18 => copyWith(fontSize: 18);
-  TextStyle get size20 => copyWith(fontSize: 20);
-  TextStyle get size22 => copyWith(fontSize: 22);
-  TextStyle get size24 => copyWith(fontSize: 24);
-  TextStyle get size28 => copyWith(fontSize: 28);
-  TextStyle get size32 => copyWith(fontSize: 32);
-  TextStyle get size36 => copyWith(fontSize: 36);
-  TextStyle get size48 => copyWith(fontSize: 48);
+  TextStyle get size10 => copyWith(fontSize: 10.sp);
+  TextStyle get size11 => copyWith(fontSize: 11.sp);
+  TextStyle get size12 => copyWith(fontSize: 12.sp);
+  TextStyle get size13 => copyWith(fontSize: 13.sp);
+  TextStyle get size14 => copyWith(fontSize: 14.sp);
+  TextStyle get size15 => copyWith(fontSize: 15.sp);
+  TextStyle get size16 => copyWith(fontSize: 16.sp);
+  TextStyle get size18 => copyWith(fontSize: 18.sp);
+  TextStyle get size20 => copyWith(fontSize: 20.sp);
+  TextStyle get size22 => copyWith(fontSize: 22.sp);
+  TextStyle get size24 => copyWith(fontSize: 24.sp);
+  TextStyle get size28 => copyWith(fontSize: 28.sp);
+  TextStyle get size30 => copyWith(fontSize: 30.sp);
+  TextStyle get size32 => copyWith(fontSize: 32.sp);
+  TextStyle get size36 => copyWith(fontSize: 36.sp);
+  TextStyle get size48 => copyWith(fontSize: 48.sp);
 
   // Combined variations (weight + size)
   TextStyle get thin10 => thin.size10;
@@ -58,6 +60,7 @@ extension GoogleFontsStyleExtension on TextStyle {
   TextStyle get medium16 => medium.size16;
   TextStyle get medium18 => medium.size18;
   TextStyle get medium20 => medium.size20;
+  TextStyle get medium24 => medium.size24;
 
   TextStyle get semiBold12 => semiBold.size12;
   TextStyle get semiBold14 => semiBold.size14;
@@ -73,6 +76,7 @@ extension GoogleFontsStyleExtension on TextStyle {
   TextStyle get bold20 => bold.size20;
   TextStyle get bold24 => bold.size24;
   TextStyle get bold28 => bold.size28;
+  TextStyle get bold30 => bold.size30;
   TextStyle get bold32 => bold.size32;
 
   TextStyle get extraBold20 => extraBold.size20;

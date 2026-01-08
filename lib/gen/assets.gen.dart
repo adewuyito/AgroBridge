@@ -17,14 +17,43 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow_left_green.svg
+  SvgGenImage get arrowLeftGreen =>
+      const SvgGenImage('assets/icons/arrow_left_green.svg');
+
+  /// File path: assets/icons/dollar_sign.svg
+  SvgGenImage get dollarSign =>
+      const SvgGenImage('assets/icons/dollar_sign.svg');
+
+  /// File path: assets/icons/file_pdf.svg
+  SvgGenImage get filePdf => const SvgGenImage('assets/icons/file_pdf.svg');
+
   /// File path: assets/icons/google_g.svg
   SvgGenImage get googleG => const SvgGenImage('assets/icons/google_g.svg');
 
   /// File path: assets/icons/google_g_2.svg
   SvgGenImage get googleG2 => const SvgGenImage('assets/icons/google_g_2.svg');
 
+  /// File path: assets/icons/home_cart.svg
+  SvgGenImage get homeCart => const SvgGenImage('assets/icons/home_cart.svg');
+
+  /// File path: assets/icons/input_field_prefix.svg
+  SvgGenImage get inputFieldPrefix =>
+      const SvgGenImage('assets/icons/input_field_prefix.svg');
+
+  /// File path: assets/icons/input_field_suffix.svg
+  SvgGenImage get inputFieldSuffix =>
+      const SvgGenImage('assets/icons/input_field_suffix.svg');
+
   /// File path: assets/icons/mail.svg
   SvgGenImage get mail => const SvgGenImage('assets/icons/mail.svg');
+
+  /// File path: assets/icons/map_pin.svg
+  SvgGenImage get mapPin => const SvgGenImage('assets/icons/map_pin.svg');
+
+  /// File path: assets/icons/notification_bell.svg
+  SvgGenImage get notificationBell =>
+      const SvgGenImage('assets/icons/notification_bell.svg');
 
   /// File path: assets/icons/password_hide.svg
   SvgGenImage get passwordHide =>
@@ -34,13 +63,26 @@ class $AssetsIconsGen {
   SvgGenImage get passwordReveal =>
       const SvgGenImage('assets/icons/password_reveal.svg');
 
+  /// File path: assets/icons/success_icon.svg
+  SvgGenImage get successIcon =>
+      const SvgGenImage('assets/icons/success_icon.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
+    arrowLeftGreen,
+    dollarSign,
+    filePdf,
     googleG,
     googleG2,
+    homeCart,
+    inputFieldPrefix,
+    inputFieldSuffix,
     mail,
+    mapPin,
+    notificationBell,
     passwordHide,
     passwordReveal,
+    successIcon,
   ];
 }
 
