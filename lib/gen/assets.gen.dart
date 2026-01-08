@@ -86,10 +86,40 @@ class $AssetsIconsGen {
   ];
 }
 
+class $AssetsOnboardingSvgGen {
+  const $AssetsOnboardingSvgGen();
+
+  /// File path: assets/onboarding_svg/onboarding_tab_svg_1.svg
+  SvgGenImage get onboardingTabSvg1 =>
+      const SvgGenImage('assets/onboarding_svg/onboarding_tab_svg_1.svg');
+
+  /// File path: assets/onboarding_svg/onboarding_tab_svg_2.svg
+  SvgGenImage get onboardingTabSvg2 =>
+      const SvgGenImage('assets/onboarding_svg/onboarding_tab_svg_2.svg');
+
+  /// File path: assets/onboarding_svg/onboarding_tab_svg_3.svg
+  SvgGenImage get onboardingTabSvg3 =>
+      const SvgGenImage('assets/onboarding_svg/onboarding_tab_svg_3.svg');
+
+  /// File path: assets/onboarding_svg/onboarding_tab_svg_4.svg
+  SvgGenImage get onboardingTabSvg4 =>
+      const SvgGenImage('assets/onboarding_svg/onboarding_tab_svg_4.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+    onboardingTabSvg1,
+    onboardingTabSvg2,
+    onboardingTabSvg3,
+    onboardingTabSvg4,
+  ];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsOnboardingSvgGen onboardingSvg =
+      $AssetsOnboardingSvgGen();
 }
 
 class SvgGenImage {

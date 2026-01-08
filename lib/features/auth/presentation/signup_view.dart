@@ -97,8 +97,16 @@ class SignupView extends HookConsumerWidget {
             const SizedBox(height: 72),
 
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 56),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
               onPressed: _isloading ? null : _handleSignUp,
-              child: _isloading ? CircularProgressIndicator() : Text('Sign In'),
+              child: _isloading
+                  ? CircularProgressIndicator()
+                  : Text('Sign Up', style: AppFonts.inter.regular20),
             ),
 
             SizedBox(height: 24.h),

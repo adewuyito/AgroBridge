@@ -50,7 +50,7 @@ class LoginView extends HookConsumerWidget {
               onTap: () {},
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
+                  horizontal: 46,
                   vertical: 8,
                 ),
                 decoration: BoxDecoration(
@@ -60,7 +60,7 @@ class LoginView extends HookConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
-                  spacing: 10,
+                  spacing: 23,
                   children: [
                     Text(
                       'Sign in with Google',
@@ -129,6 +129,12 @@ class LoginView extends HookConsumerWidget {
                   SizedBox(height: 71.h),
 
                   ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 56),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
                     onPressed: _isloading ? null : _handleLogin,
                     child: _isloading
                         ? CircularProgressIndicator()
