@@ -46,9 +46,10 @@ class AppRouter extends RootStackRouter {
     ),
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: SignupRoute.page, initial: false),
-    AutoRoute(page: HomeTab.page, initial: false),
+    AutoRoute(page: HomeTab.page, initial: true),
     AutoRoute(page: ProductDetailRoute.page, initial: false),
-    AutoRoute(page: CartRoute.page, initial: true),
+    AutoRoute(page: CartRoute.page),
+    AutoRoute(page: CartCheckoutRoute.page),
   ];
   @override
   List<AutoRouteGuard> get guards => [_authGuard];

@@ -42,7 +42,7 @@ final class OnboardingPageControllerProvider
 }
 
 String _$onboardingPageControllerHash() =>
-    r'8d8a00fa39c2612996a6f636f3f47b7cc666a17d';
+    r'c02400f7073bf83d4fe4f351d295e3f400bf20b3';
 
 abstract class _$OnboardingPageController extends $Notifier<int> {
   int build();

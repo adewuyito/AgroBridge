@@ -10,16 +10,17 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:agrobridge_mobile/features/auth/presentation/login_view.dart'
-    as _i5;
-
-import 'package:agrobridge_mobile/features/auth/presentation/onboarding_views/tabview_one.dart'
     as _i6;
+import 'package:agrobridge_mobile/features/auth/presentation/onboarding_views/tabview_one.dart'
+    as _i7;
 import 'package:agrobridge_mobile/features/auth/presentation/signup_view.dart'
     as _i11;
-import 'package:agrobridge_mobile/features/cart/presentation/cart_view.dart'
+import 'package:agrobridge_mobile/features/cart/presentation/cart_checkout_view.dart'
     as _i2;
+import 'package:agrobridge_mobile/features/cart/presentation/cart_view.dart'
+    as _i3;
 import 'package:agrobridge_mobile/features/home/presentation/home_tab.dart'
-    as _i4;
+    as _i5;
 import 'package:agrobridge_mobile/features/home/presentation/product_detail_view.dart'
     as _i8;
 import 'package:agrobridge_mobile/features/home/presentation/product_quote_view.dart'
@@ -27,7 +28,7 @@ import 'package:agrobridge_mobile/features/home/presentation/product_quote_view.
 import 'package:agrobridge_mobile/features/home/presentation/success_view.dart'
     as _i10;
 import 'package:agrobridge_mobile/features/home/presentation/widget/home_search_filter_bottom_sheet.dart'
-    as _i3;
+    as _i4;
 import 'package:agrobridge_mobile/navigation/app_navigation_tabview.dart'
     as _i1;
 import 'package:auto_route/auto_route.dart' as _i12;
@@ -49,7 +50,23 @@ class AppNavigationTabview extends _i12.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.CartView]
+/// [_i2.CartCheckoutView]
+class CartCheckoutRoute extends _i12.PageRouteInfo<void> {
+  const CartCheckoutRoute({List<_i12.PageRouteInfo>? children})
+    : super(CartCheckoutRoute.name, initialChildren: children);
+
+  static const String name = 'CartCheckoutRoute';
+
+  static _i12.PageInfo page = _i12.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.CartCheckoutView();
+    },
+  );
+}
+
+/// generated route for
+/// [_i3.CartView]
 class CartRoute extends _i12.PageRouteInfo<void> {
   const CartRoute({List<_i12.PageRouteInfo>? children})
     : super(CartRoute.name, initialChildren: children);
@@ -59,13 +76,13 @@ class CartRoute extends _i12.PageRouteInfo<void> {
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i2.CartView();
+      return const _i3.CartView();
     },
   );
 }
 
 /// generated route for
-/// [_i3.HomeSearchFilterBottomSheet]
+/// [_i4.HomeSearchFilterBottomSheet]
 class HomeSearchFilterBottomSheet extends _i12.PageRouteInfo<void> {
   const HomeSearchFilterBottomSheet({List<_i12.PageRouteInfo>? children})
     : super(HomeSearchFilterBottomSheet.name, initialChildren: children);
@@ -75,13 +92,13 @@ class HomeSearchFilterBottomSheet extends _i12.PageRouteInfo<void> {
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i3.HomeSearchFilterBottomSheet();
+      return const _i4.HomeSearchFilterBottomSheet();
     },
   );
 }
 
 /// generated route for
-/// [_i4.HomeTab]
+/// [_i5.HomeTab]
 class HomeTab extends _i12.PageRouteInfo<void> {
   const HomeTab({List<_i12.PageRouteInfo>? children})
     : super(HomeTab.name, initialChildren: children);
@@ -91,13 +108,13 @@ class HomeTab extends _i12.PageRouteInfo<void> {
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i4.HomeTab();
+      return const _i5.HomeTab();
     },
   );
 }
 
 /// generated route for
-/// [_i5.LoginView]
+/// [_i6.LoginView]
 class LoginRoute extends _i12.PageRouteInfo<void> {
   const LoginRoute({List<_i12.PageRouteInfo>? children})
     : super(LoginRoute.name, initialChildren: children);
@@ -107,13 +124,13 @@ class LoginRoute extends _i12.PageRouteInfo<void> {
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i5.LoginView();
+      return const _i6.LoginView();
     },
   );
 }
 
 /// generated route for
-/// [_i6.OnboardingTabView]
+/// [_i7.OnboardingTabView]
 class OnboardingTabRoute extends _i12.PageRouteInfo<void> {
   const OnboardingTabRoute({List<_i12.PageRouteInfo>? children})
     : super(OnboardingTabRoute.name, initialChildren: children);
@@ -123,11 +140,10 @@ class OnboardingTabRoute extends _i12.PageRouteInfo<void> {
   static _i12.PageInfo page = _i12.PageInfo(
     name,
     builder: (data) {
-      return const _i6.OnboardingTabView();
+      return const _i7.OnboardingTabView();
     },
   );
 }
-
 
 /// generated route for
 /// [_i8.ProductDetailView]

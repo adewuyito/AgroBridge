@@ -1,5 +1,6 @@
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
-import 'package:auto_route/annotations.dart';
+import 'package:agrobridge_mobile/routes/app_route.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -318,7 +319,9 @@ class _CheckoutButton extends StatelessWidget {
         ],
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushRoute(const CartCheckoutRoute());
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF1E5925),
           minimumSize: Size(double.infinity, 51.h),
