@@ -41,41 +41,24 @@ class AppRouter extends RootStackRouter {
 
     AutoRoute(page: ProductSuccessRoute.page, initial: false),
     AutoRoute(
+      initial: true,
       page: AppNavigationTabview.page,
-      children: [AutoRoute(page: HomeTab.page)],
+      children: [
+        AutoRoute(page: HomeTab.page),
+        AutoRoute(page: RequestsRoute.page),
+        AutoRoute(page: CartRoute.page),
+        AutoRoute(page: ProfileRoute.page),
+      ],
     ),
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: SignupRoute.page, initial: false),
-    AutoRoute(page: HomeTab.page, initial: true),
+    AutoRoute(page: HomeTab.page, initial: false),
     AutoRoute(page: ProductDetailRoute.page, initial: false),
     AutoRoute(page: CartRoute.page),
     AutoRoute(page: CartCheckoutRoute.page),
+    AutoRoute(page: RequestsRoute.page),
+    AutoRoute(page: ProfileRoute.page),
   ];
   @override
   List<AutoRouteGuard> get guards => [_authGuard];
-
-  // void updateAuthGuard(AuthGuard guard) {
-  //   authGuard = guard;
-  //   notifyListeners();
-  // }
-
-  // CustomRoute routeWithFadeTransition({
-  //   required PageInfo<dynamic> page,
-  //   bool initial = false,
-  //   String? path,
-  //   Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-  //       transitionsBuilder =
-  //       TransitionsBuilders.fadeIn,
-  //   List<AutoRoute>? children,
-  // }) {
-  //   return CustomRoute(
-  //     path: path,
-  //     page: page,
-  //     initial: initial,
-  //     transitionsBuilder: transitionsBuilder,
-  //     durationInMilliseconds: 400,
-  //     guards: [authGuard],
-  //     children: children,
-  //   );
-  // }
 }
