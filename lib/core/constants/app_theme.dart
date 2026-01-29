@@ -1,6 +1,7 @@
 // base theme
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final baseTheme = ThemeData.light();
 
@@ -97,5 +98,5 @@ final ThemeData appTheme = baseTheme.copyWith(
       // fontFamily: FontFamily.generalSans,
     ),
   ),
-  // textTheme: hpTextTheme.apply(fontFamily: FontFamily.montserrat),
+  // textTheme: GoogleFonts.,
 );
