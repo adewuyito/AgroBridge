@@ -1,5 +1,6 @@
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({super.key});
@@ -13,12 +14,11 @@ class ProductDetail extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      spacing: 24,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Availability :', style: ts1),
+            Text('Availability', style: ts1),
             Text(
               'In Stock',
               style: AppFonts.openSans.semiBold16.withColor(
@@ -28,10 +28,16 @@ class ProductDetail extends StatelessWidget {
           ],
         ),
 
+        SizedBox(height: 13.h),
+
+        Divider(color: Color(0xFFE5E7EB)),
+
+        SizedBox(height: 25.h),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Minimum Order Quantity :', style: ts1),
+            Text('Minimum Order Quantity', style: ts1),
             Text(
               '5 Tons',
               style: AppFonts.openSans.semiBold16.withColor(
@@ -41,10 +47,16 @@ class ProductDetail extends StatelessWidget {
           ],
         ),
 
+        SizedBox(height: 13.h),
+
+        Divider(color: Color(0xFFE5E7EB)),
+
+        SizedBox(height: 25.h),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Grade  :', style: ts1),
+            Text('Grade', style: ts1),
             Text(
               'Premium Grade A',
               style: AppFonts.openSans.semiBold16.withColor(
@@ -54,10 +66,16 @@ class ProductDetail extends StatelessWidget {
           ],
         ),
 
+        SizedBox(height: 13.h),
+
+        Divider(color: Color(0xFFE5E7EB)),
+
+        SizedBox(height: 25.h),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Packaging  :', style: ts1),
+            Text('Packaging', style: ts1),
             Text(
               '50kg bags',
               style: AppFonts.openSans.semiBold16.withColor(
@@ -66,6 +84,10 @@ class ProductDetail extends StatelessWidget {
             ),
           ],
         ),
+
+        SizedBox(height: 13.h),
+
+        Divider(color: Color(0xFFE5E7EB)),
       ],
     );
   }

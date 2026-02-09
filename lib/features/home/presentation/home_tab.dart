@@ -20,6 +20,11 @@ class HomeTab extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final searchController = useTextEditingController();
     return Scaffold(
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     AppNavigator.of(context).push(ProductDetailRoute());
+      //   },
+      // ),
       appBar: HomeAppbar(),
       body: SingleChildScrollView(
         child: Column(

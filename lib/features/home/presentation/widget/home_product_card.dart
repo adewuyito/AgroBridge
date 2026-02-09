@@ -11,8 +11,8 @@ class HomeProductCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(12),
-      width: 184.w,
-      height: 261.h,
+      width: 200.w,
+      height: 284.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -42,7 +42,7 @@ class HomeProductCard extends ConsumerWidget {
                 ),
               ),
 
-              SizedBox(height: 18.h),
+              SizedBox(height: 12.h),
               // ~ Product name
               Text(
                 'Product Name',
@@ -51,7 +51,6 @@ class HomeProductCard extends ConsumerWidget {
                 overflow: TextOverflow.ellipsis,
               ),
 
-              // SizedBox(height: 8.h),
               // ~ Product location.
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -67,23 +66,26 @@ class HomeProductCard extends ConsumerWidget {
                 ],
               ),
 
-              SizedBox(height: 11.h),
-              // ~ Product Price
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // SizedBox(height: 11.h),
+              Text(
+                "\$48.97/ Ton",
+                style: AppFonts.openSans.bold20.withColor(
+                  Color.fromRGBO(17, 24, 39, 1),
+                ),
+              ),
 
-                children: [
-                  Text(
-                    "\$48.97/ Ton",
-                    style: AppFonts.openSans.bold20.withColor(
-                      Color.fromRGBO(17, 24, 39, 1),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {}, // TODO: Add logic
-                    child: Assets.icons.homeCart.svg(),
-                  ),
-                ],
+              SizedBox(height: 4.h),
+
+              // ~ Product Price
+              ElevatedButton(
+                onPressed: () {}, // TODO: Add logic
+                child: Row(
+                  spacing: 10,
+                  children: [
+                    Assets.icons.homeCart.svg(),
+                    Text('Add to cart', style: AppFonts.openSans.regular12),
+                  ],
+                ),
               ),
             ],
           ),

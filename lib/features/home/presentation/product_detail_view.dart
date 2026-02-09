@@ -64,27 +64,32 @@ class ProductDetailView extends ConsumerWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 36),
-                  // ~ Price text
-                  Text(
-                    '\$1,230 / Ton',
-                    style: AppFonts.openSans
-                        .withWeight(FontWeight.w700)
-                        .withSize(30)
-                        .withColor(Color.fromRGBO(17, 24, 39, 1)),
-                  ),
-
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
 
                   // ~ Legend Text
                   ProductNavigationLegend(),
 
-                  const SizedBox(height: 36),
+                  SizedBox(height: 32.h),
+                  // ~ Price text
+                  Text(
+                    '\$1,230 / Ton',
+                    style: AppFonts.openSans.bold30.withColor(
+                      Color.fromRGBO(17, 24, 39, 1),
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  Divider(color: Color(0xFFE5E7EB)),
+
+                  const SizedBox(height: 33),
 
                   // ~ Product Details
                   ProductDetail(),
 
-                  const SizedBox(height: 36),
+                  const SizedBox(height: 32),
+
+                  //  ~ Sourcing Text
                   Text(
                     'Sourced directly from verified small/holder farmers in Kaduna and Oyo, processed under export-ready standards. ',
                     style: AppFonts.openSans
@@ -93,54 +98,35 @@ class ProductDetailView extends ConsumerWidget {
                   ),
 
                   // ~ Action Buttons Row
-                  const SizedBox(height: 36),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // ~ Some from of back button
-                      OutlinedButton(
-                        onPressed: () {},
-                        child: Row(
-                          spacing: 8,
-                          children: [
-                            Assets.icons.arrowLeftGreen.svg(),
-                            Text(
-                              'Back',
-                              style: AppFonts.inter.regular16
-                                  .withHeight(1.2)
-                                  .withLetterSpacing(-.2),
-                            ),
-                          ],
-                        ),
-                      ),
+                  const SizedBox(height: 32),
 
-                      // ~ Request Quate Button
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: null,
-                          elevation: 0,
+                  // ~ Request Quate Button
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: null,
+                      elevation: 0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 10,
+                      children: [
+                        Assets.icons.homeCart.svg(),
+                        Text(
+                          'Add to cart',
+                          style: AppFonts.inter.regular16
+                              .withHeight(1.2)
+                              .withLetterSpacing(-.2),
                         ),
-                        child: Row(
-                          spacing: 10,
-                          children: [
-                            Assets.icons.dollarSign.svg(),
-                            Text(
-                              'Request a Quote',
-                              style: AppFonts.inter.regular16
-                                  .withHeight(1.2)
-                                  .withLetterSpacing(-.2),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
 
               // ~ Product spec sheet download
               const SizedBox(height: 28),
+
               TextButton(
                 onPressed: () {},
                 child: Row(
@@ -170,7 +156,9 @@ class ProductDetailView extends ConsumerWidget {
                       .withColor(Color.fromRGBO(65, 70, 82, 1)),
                 ),
               ),
+
               const SizedBox(height: 18),
+
               ProductDetailRelatedProducts(),
             ],
           ),

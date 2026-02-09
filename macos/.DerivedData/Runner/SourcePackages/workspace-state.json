@@ -1,0 +1,24 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "path_provider_foundation",
+          "kind" : "fileSystem",
+          "location" : "/Users/adewuyi/Development/debridger.mobile/macos/Flutter/ephemeral/Packages/.packages/path_provider_foundation",
+          "name" : "path_provider_foundation"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/adewuyi/Development/debridger.mobile/macos/Flutter/ephemeral/Packages/.packages/path_provider_foundation"
+        },
+        "subpath" : "path_provider_foundation"
+      }
+    ]
+  },
+  "version" : 6
+}
