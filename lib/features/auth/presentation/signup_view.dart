@@ -21,10 +21,9 @@ class SignupView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // ~ Variable
-    final _companyName = useTextEditingController();
-    final _contactPerson = useTextEditingController();
     final _email = useTextEditingController();
     final _password = useTextEditingController();
+    final _confirmPassword = useTextEditingController();
     final bool _isloading = ref.watch(isLoadingProvider);
 
     //~ Form key
@@ -45,6 +44,61 @@ class SignupView extends HookConsumerWidget {
               style: AppFonts.openSans.bold24.withColor(Color(0xFF414652)),
             ),
 
+            const SizedBox(height: 32),
+
+            // ~ Goole Signin
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 56),
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                  side: BorderSide(color: Color.fromARGB(255, 197, 204, 218)),
+                ),
+              ),
+              onPressed: () {},
+              child: Row(
+                spacing: 23.w,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign in with Google',
+                    style: AppFonts.openSans.regular14.withColor(
+                      Color.fromRGBO(65, 70, 82, 1),
+                    ),
+                  ),
+                  Assets.icons.googleG2.svg(),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 77),
+
+            // ~ Divider
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 17,
+              children: [
+                Container(
+                  width: 51,
+                  height: 1,
+                  color: Color.fromRGBO(17, 24, 39, 0.2),
+                ),
+                Text(
+                  'Or Continue with email',
+                  style: AppFonts.openSans.regular12.withColor(
+                    Color.fromRGBO(112, 116, 125, 1),
+                  ),
+                ),
+                Container(
+                  width: 51,
+                  height: 1,
+                  color: Color.fromRGBO(17, 24, 39, 0.2),
+                ),
+              ],
+            ),
+
             const SizedBox(height: 42),
 
             // ~ Login Form
@@ -53,27 +107,6 @@ class SignupView extends HookConsumerWidget {
               child: Column(
                 spacing: 32,
                 children: [
-                  AuthFormTextfield(
-                    controller: _companyName,
-                    label: 'Comapany Name',
-                    hint: "Olak Global Inc.",
-                    validation: (value) => InputValidatorUtils.nonEmptyField(
-                      'Kindly enter company name',
-                      value,
-                      personalMessage: true,
-                    ),
-                  ),
-
-                  AuthFormTextfield(
-                    controller: _contactPerson,
-                    label: 'Contact Person',
-                    hint: "John Doe",
-                    validation: (value) => InputValidatorUtils.nonEmptyField(
-                      'Contact Person',
-                      value,
-                    ),
-                  ),
-
                   AuthFormTextfield(
                     controller: _email,
                     label: "Email",
@@ -90,6 +123,22 @@ class SignupView extends HookConsumerWidget {
                     validation: (value) =>
                         InputValidatorUtils.nonEmptyField('Password', value),
                   ),
+
+                  AuthFormTextfield(
+                    controller: _confirmPassword,
+                    label: "Confirm Password",
+                    hint: "********",
+                    icon: Assets.icons.passwordHide.svg(),
+                    validation: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please confirm your password';
+                      }
+                      if (value != _password.text) {
+                        return 'Passwords do not match';
+                      }
+                      return null;
+                    },
+                  ),
                 ],
               ),
             ),
@@ -98,15 +147,22 @@ class SignupView extends HookConsumerWidget {
 
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 56),
+                backgroundColor: const Color.fromRGBO(30, 89, 37, 1),
+                foregroundColor: Colors.white,
+                minimumSize: const Size(354, 56),
+                padding: const EdgeInsets.all(10),
+                side: const BorderSide(color: Color(0xFF1E5925), width: 1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
               onPressed: _isloading ? null : _handleSignUp,
               child: _isloading
-                  ? CircularProgressIndicator()
-                  : Text('Sign Up', style: AppFonts.inter.regular20),
+                  ? const CircularProgressIndicator(color: Colors.white)
+                  : Text(
+                      'Sign Up',
+                      style: AppFonts.inter.regular20.withColor(Colors.white),
+                    ),
             ),
 
             SizedBox(height: 24.h),

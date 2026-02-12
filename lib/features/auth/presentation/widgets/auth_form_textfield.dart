@@ -39,6 +39,7 @@ class AuthFormTextfield extends StatelessWidget {
           validator: validation,
           style: AppFonts.inter.regular16,
           decoration: InputDecoration(
+            
             hintText: hint,
             hintStyle: AppFonts.inter.medium16.withColor(
               const Color.fromRGBO(148, 163, 184, 1),

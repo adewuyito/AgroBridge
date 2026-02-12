@@ -1,7 +1,6 @@
 // base theme
 import 'package:agrobridge_mobile/core/extensions/font_extentions.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 final baseTheme = ThemeData.light();
 
@@ -9,8 +8,6 @@ final baseTheme = ThemeData.light();
 final inputBorderBase = OutlineInputBorder(
   borderRadius: BorderRadius.circular(24),
   borderSide: BorderSide(color: Color.fromRGBO(30, 89, 37, 1)),
-
-  // borderSide: BorderSide(color: ColorName.borderGrey),
 );
 
 final ThemeData appTheme = baseTheme.copyWith(

@@ -41,7 +41,7 @@ class AppRouter extends RootStackRouter {
 
     AutoRoute(page: ProductSuccessRoute.page, initial: false),
     AutoRoute(
-      initial: true,
+      initial: false,
       page: AppNavigationTabview.page,
       children: [
         AutoRoute(page: HomeTab.page),
@@ -50,8 +50,8 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: ProfileRoute.page),
       ],
     ),
-    AutoRoute(page: LoginRoute.page),
-    AutoRoute(page: SignupRoute.page, initial: false),
+    AutoRoute(page: LoginRoute.page, initial: false),
+    AutoRoute(page: SignupRoute.page, initial: true),
     AutoRoute(page: HomeTab.page, initial: false),
     AutoRoute(page: ProductDetailRoute.page, initial: false),
     AutoRoute(page: CartRoute.page),

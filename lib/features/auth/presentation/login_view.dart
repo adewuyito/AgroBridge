@@ -46,31 +46,29 @@ class LoginView extends HookConsumerWidget {
             const SizedBox(height: 32),
 
             // ~ Goole Signin
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 46,
-                  vertical: 8,
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 56),
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                  side: BorderSide(color: Color.fromARGB(255, 197, 204, 218)),
                 ),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 197, 204, 218)),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  spacing: 23,
-                  children: [
-                    Text(
-                      'Sign in with Google',
-                      style: AppFonts.openSans.regular14.withColor(
-                        Color.fromRGBO(65, 70, 82, 1),
-                      ),
+              ),
+              onPressed: () {},
+              child: Row(
+                spacing: 23.w,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign in with Google',
+                    style: AppFonts.openSans.regular14.withColor(
+                      Color.fromRGBO(65, 70, 82, 1),
                     ),
-                    Assets.icons.googleG2.svg(),
-                  ],
-                ),
+                  ),
+                  Assets.icons.googleG2.svg(),
+                ],
               ),
             ),
 
@@ -126,19 +124,55 @@ class LoginView extends HookConsumerWidget {
                         InputValidatorUtils.nonEmptyField('Password', value),
                   ),
 
-                  SizedBox(height: 71.h),
+                  SizedBox(height: 6.h),
+
+                  // ~ Forget Password
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                        // TODO: Implement forgot password functionality
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                      child: Text(
+                        'Forgot Password?',
+                        style: AppFonts.openSans.regular14.copyWith(
+                          color: Color(0xFF4B7A51),
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 24.h),
 
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 56),
+                      backgroundColor: const Color.fromRGBO(30, 89, 37, 1),
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(354, 56),
+                      padding: const EdgeInsets.all(10),
+                      side: const BorderSide(
+                        color: Color(0xFF1E5925),
+                        width: 1,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
                     onPressed: _isloading ? null : _handleLogin,
                     child: _isloading
-                        ? CircularProgressIndicator()
-                        : Text('Sign In', style: AppFonts.inter.regular20),
+                        ? const CircularProgressIndicator(color: Colors.white)
+                        : Text(
+                            'Sign In',
+                            style: AppFonts.inter.regular20.withColor(
+                              Colors.white,
+                            ),
+                          ),
                   ),
                 ],
               ),
